@@ -1,2 +1,2 @@
 # constrained-counterpoint
-Counterpoint... using python-constraint!
+Counterpoint using python-constraint
