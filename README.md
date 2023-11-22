@@ -1,2 +1,2 @@
 # constrained-counterpoint
-Counterpoint... using SAT solvers!
+Counterpoint... using python-constraint!
