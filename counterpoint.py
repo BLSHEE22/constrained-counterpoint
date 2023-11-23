@@ -30,7 +30,7 @@ def makeCantusFirmus(cfLength, scale):
     # ALWAYS RESOLVE LEAPS BY STEP IN OPPOSITE DIRECTION
     for j in range(1, cfLength+1):
         if j > 2:
-            p.addConstraint(lambda x,y,z: z == scales[scale][scales[scale].index(y)+1] if abs(x-y) > 3 and x>y else (z == scales[scale][scales[scale].index(y)-1] if abs(x-y) > 3 and x<y else z), [j-2,j-1,j])
+            p.addConstraint(lambda x,y,z: z == scales[scale][scales[scale].index(y)+1] if abs(x-y) > 2 and x>y else (z == scales[scale][scales[scale].index(y)-1] if abs(x-y) > 2 and x<y else z), [j-2,j-1,j])
     print("\'Resolve leaps by step in opposite direction\' constraint added.")
     # NO DISSONANT LEAPS OR STATIC MOTION
     for j in range(1, cfLength+1):
@@ -48,7 +48,7 @@ def makeCantusFirmus(cfLength, scale):
 
 def main():
     print("Get ready for some counterpoint!\n")
-    makeCantusFirmus(cfLength=15, scale="Major")
+    makeCantusFirmus(cfLength=11, scale="Major")
 
 if __name__ == "__main__":
     main()
