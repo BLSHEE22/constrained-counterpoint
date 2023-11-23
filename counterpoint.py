@@ -22,16 +22,21 @@ def makeCantusFirmus(cfLength, scale):
         if j == cfLength-1:
             p.addConstraint(lambda x: x == -1 or x == 2, [j])
     print("\'Penultimate note leading tone/supertonic\' constraint added.")
+    # LEADING TONE ALWAYS LEADS TO TONIC
+    for j in range(1, cfLength+1):
+        if j > 1:
+            p.addConstraint(lambda x,y: y == 0 if x == -1 else (y == 12 if x == 11 else y), [j-1,j])            
+    print("\'Leading tone leads to tonic\' constraint added.")
     # ALWAYS RESOLVE LEAPS BY STEP IN OPPOSITE DIRECTION
     for j in range(1, cfLength+1):
         if j > 2:
             p.addConstraint(lambda x,y,z: z == scales[scale][scales[scale].index(y)+1] if abs(x-y) > 3 and x>y else (z == scales[scale][scales[scale].index(y)-1] if abs(x-y) > 3 and x<y else z), [j-2,j-1,j])
     print("\'Resolve leaps by step in opposite direction\' constraint added.")
-    # NO LARGER-THAN-TENTH, OCTAVE, TRITONE, OR STATIC MOTION
+    # NO DISSONANT LEAPS OR STATIC MOTION
     for j in range(1, cfLength+1):
         if j != cfLength:
-            p.addConstraint(lambda x,y: abs(x-y) < 16 and abs(x - y) != 12 and abs(x - y) != 6 and abs(x - y) != 0, (j, j+1))
-    print("\'No larger-than-tenth/octave/tritone/static motion\' constraint added.")
+            p.addConstraint(lambda x,y: abs(x-y) < 17 and abs(x-y) != 14 and abs(x-y) != 13 and abs(x - y) != 12 and abs(x-y) != 11 and abs(x-y) != 10 and abs(x-y) != 7 and abs(x - y) != 6 and abs(x - y) != 0, (j, j+1))
+    print("\'No dissonant leaps or static motion\' constraint added.")
     # TODO: REPETITION CONSTRAINT
     print("Constraints added.\n")
     print(f'Finding all {cfLength}-note cantus firmi that meet the requirements...\n')
@@ -43,7 +48,7 @@ def makeCantusFirmus(cfLength, scale):
 
 def main():
     print("Get ready for some counterpoint!\n")
-    makeCantusFirmus(cfLength=9, scale="Major")
+    makeCantusFirmus(cfLength=15, scale="Major")
 
 if __name__ == "__main__":
     main()
