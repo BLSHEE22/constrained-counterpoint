@@ -1,9 +1,12 @@
 import random
 from constraint import *
 
+CF_LENGTH = 11
+SCALE = "Major"
+
 scales = {"Major": [-5,-3,-1,0,2,4,5,7,9,11,12,14,16], "Minor":[-5,-4,-1,0,2,3,5,7,8,10,12,14,15]}
 
-def makeCantusFirmus(cfLength, scale):
+def make_cantus_firmus(cfLength, scale):
     print("Starting cantus firmus creation sequence...\n")
     p = Problem()
     print("Adding variables...")
@@ -43,12 +46,20 @@ def makeCantusFirmus(cfLength, scale):
     solutions = p.getSolutions()
     print(f'{len(solutions)} found!\n')
     print("Choosing a random solution...\n")
-    randomSolution = random.choice(p.getSolutions())
+    randomSolution = random.choice(solutions)
     print((sorted(dict(randomSolution).items())))
+    return(randomSolution)
+
+def make_bass(cf, length, scale):
+    print("Starting bass creation sequence...")
+    p = Problem()
+    print()
+    pass
 
 def main():
     print("Get ready for some counterpoint!\n")
-    makeCantusFirmus(cfLength=11, scale="Major")
+    cf1 = make_cantus_firmus(cfLength=CF_LENGTH, scale=SCALE)
+    #bass = makeBass(cf, cfLength=CF_LENGTH, scale=SCALE)
 
 if __name__ == "__main__":
     main()
