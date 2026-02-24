@@ -11,19 +11,19 @@ Generate your own first-species counterpoint harnessing the power of `python-con
 ## Setup
 #### Create a virtual environment.
 `python3 -m venv venv`
-<br>
+<br><br>
 
 #### Activate it.
 `source venv/bin/activate`
-<br>
+<br><br>
 
 #### Install python-constraint.
 `pip3 install python-constraint`
-<br>
+<br><br>
 
 #### Run script.
 `python3 counterpoint.py`
-<br><br>
+<br><br><br>
 
 TODO:
 - Add "max 3 consecutive 3rd/6ths" rule
