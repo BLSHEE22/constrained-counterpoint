@@ -8,7 +8,20 @@ Generate your own first-species counterpoint harnessing the power of `python-con
 - python-constraint
 - venv
 
-## Run
+## Setup
+### Create a virtual environment
+`python3 -m venv venv`
+<br>
+
+### Activate it
+`source venv/bin/activate`
+<br>
+
+### Install python-constraint
+`pip3 install python-constraint`
+<br>
+
+### Run script
 `python3 counterpoint.py`
 <br><br>
 
