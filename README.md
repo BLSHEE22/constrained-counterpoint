@@ -9,19 +9,19 @@ Generate your own first-species counterpoint harnessing the power of `python-con
 - venv
 
 ## Setup
-### Create a virtual environment
+#### Create a virtual environment.
 `python3 -m venv venv`
 <br>
 
-### Activate it
+#### Activate it.
 `source venv/bin/activate`
 <br>
 
-### Install python-constraint
+#### Install python-constraint.
 `pip3 install python-constraint`
 <br>
 
-### Run script
+#### Run script.
 `python3 counterpoint.py`
 <br><br>
 
