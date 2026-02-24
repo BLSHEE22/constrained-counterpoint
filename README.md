@@ -25,10 +25,4 @@ Generate your own first-species counterpoint harnessing the power of `python-con
 `python3 counterpoint.py`
 <br><br><br>
 
-TODO:
-- Add "max 3 consecutive 3rd/6ths" rule
-- Enforce 'arc' shape
-- Add variance constraint
-<br><br>
-
 Don't tell your music professors!

@@ -5,6 +5,11 @@ import shutil
 from config import *
 from constraint import *
 
+# TODO:
+# - Add "max 3 consecutive 3rd/6ths" rule
+# - Enforce 'arc' shape
+# - Add variance constraint
+
 
 # solve for CF based on first species counterpoint rules
 def make_cantus_firmus(cfLength, scale):
